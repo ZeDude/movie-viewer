@@ -136,8 +136,7 @@ const CyMoviePage = () => {
   };
   const handlePageChange = (e, paginationData) => {
     e.preventDefault();
-    console.log('handlePageChange, e', e);
-    console.log('handlePageChange, paginationData', paginationData);
+    //    console.log('handlePageChange, paginationData', paginationData);
     if (stateMoviePage.filtered === null) {
       getMoviesForPage(paginationData.activePage)
         .then((data) => {

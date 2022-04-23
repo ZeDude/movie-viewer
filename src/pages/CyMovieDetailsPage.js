@@ -13,7 +13,7 @@ const CyMovieDetailsPage = () => {
     if (movie) {
       setSelectedMovie(movie);
     }
-  }, [selectedMovie]);
+  }, [movieId, selectedMovie]);
 
   return (
     <>
