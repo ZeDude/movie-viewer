@@ -37,7 +37,7 @@ const fetchMovies = async () => {
 };
 
 // set movieCache.filteredMovies and return getFilteredMoviesForPage(1);
-export const filterMovies = async (filterData) => {
+export const filteredMovies = async (filterData) => {
   const allMovies = await fetchMovies();
   movieCache.filteredMovies = allMovies.filter((movie) => {
     return (
@@ -46,7 +46,7 @@ export const filterMovies = async (filterData) => {
         movie.title.toLowerCase().indexOf(filterData.titleInput) > -1) &&
       (filterData.yearInput === '' ||
         movie.description.indexOf(filterData.yearInput) > -1) &&
-      (filterData.yearInput === '' ||
+      (filterData.minimumImdbInput === '' ||
         Number(movie.imDbRating) >= filterData.minimumImdbInput) &&
       (filterData.starsArrayInput.length === 0 ||
         filterData.starsArrayInput.some(

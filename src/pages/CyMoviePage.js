@@ -6,7 +6,7 @@ import {
   getNumberOfFilteredMoviePages,
   getFilteredMoviesForPage,
   getFilterListOptions,
-  filterMovies
+  filteredMovies
 } from '../controllers/CyMovieController';
 import {
   createRangeOptionsArray,
@@ -109,7 +109,7 @@ const CyMoviePage = () => {
   }, [stateMoviePage.status]);
 
   const applyFilter = (e, newFilter) => {
-    filterMovies(newFilter).then(() => {
+    filteredMovies(newFilter).then(() => {
       const filteredResult = getFilteredMoviesForPage(1);
       newFilter.status = 'active';
       const payload = {
